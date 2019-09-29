@@ -593,6 +593,8 @@
 /**
  * The client is fullscreen or not.
  *
+ * @DOC_sequences_client_fullscreen_EXAMPLE@
+ *
  * **Signal:**
  *
  *  * *property::fullscreen*
@@ -603,6 +605,8 @@
 
 /**
  * The client is maximized (horizontally and vertically) or not.
+ *
+ * @DOC_sequences_client_maximized_EXAMPLE@
  *
  * **Signal:**
  *
@@ -615,6 +619,8 @@
 /**
  * The client is maximized horizontally or not.
  *
+ * @DOC_sequences_client_maximized_horizontal_EXAMPLE@
+ *
  * **Signal:**
  *
  *  * *property::maximized\_horizontal*
@@ -625,6 +631,8 @@
 
 /**
  * The client is maximized vertically or not.
+ *
+ * @DOC_sequences_client_maximized_vertical_EXAMPLE@
  *
  * **Signal:**
  *
