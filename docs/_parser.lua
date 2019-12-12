@@ -81,6 +81,7 @@ local modtypes = {
     submodule    = "libraries",
     utillib      = "utility_libraries",
     themelib     = "theme_related_libraries",
+    clientlayoutmod = "client_layouts",
 }
 
 local libtypes = {
