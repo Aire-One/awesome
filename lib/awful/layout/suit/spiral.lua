@@ -1,11 +1,10 @@
 ---------------------------------------------------------------------------
---- Dwindle and spiral layouts
+--- Dwindle and spiral layouts.
 --
 -- @author Uli Schlachter &lt;psychon@znc.in&gt;
 -- @copyright 2009 Uli Schlachter
 -- @copyright 2008 Julien Danjou
---
--- @module awful.layout
+-- @clientlayoutmod awful.layout.suit.spiral
 ---------------------------------------------------------------------------
 
 -- Grab environment we need

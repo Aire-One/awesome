@@ -1,11 +1,11 @@
 ---------------------------------------------------------------------------
---- Tiled layouts module for awful
+--- Tiled layouts module for awful.
 --
 -- @author Donald Ephraim Curtis &lt;dcurtis@cs.uiowa.edu&gt;
 -- @author Julien Danjou &lt;julien@danjou.info&gt;
 -- @copyright 2009 Donald Ephraim Curtis
 -- @copyright 2008 Julien Danjou
--- @module awful.layout
+-- @clientlayoutmod awful.layout.suit.tile
 ---------------------------------------------------------------------------
 
 -- Grab environment we need

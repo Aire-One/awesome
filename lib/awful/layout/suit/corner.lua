@@ -3,9 +3,9 @@
 -- Display master client in a corner of the screen, and slaves in one
 -- column and one row around the master.
 -- See Pull Request for example : https://github.com/awesomeWM/awesome/pull/251
--- @module awful.layout
 -- @author Alexis Brenon &lt;brenon.alexis+awesomewm@gmail.com&gt;
 -- @copyright 2015 Alexis Brenon
+-- @clientlayoutmod awful.layout.suit.corner
 
 -- Grab environment we need
 local ipairs = ipairs

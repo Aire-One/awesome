@@ -3,7 +3,7 @@
 --
 -- @author Josh Komoroske
 -- @copyright 2012 Josh Komoroske
--- @module awful.layout
+-- @clientlayoutmod awful.layout.suit.fair
 ---------------------------------------------------------------------------
 
 -- Grab environment we need

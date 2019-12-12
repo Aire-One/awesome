@@ -1,9 +1,9 @@
 ---------------------------------------------------------------------------
---- Dummy function for floating layout
+--- Dummy function for floating layout.
 --
 -- @author Gregor Best
 -- @copyright 2008 Gregor Best
--- @module awful.layout
+-- @clientlayoutmod awful.layout.suit.floating
 ---------------------------------------------------------------------------
 
 -- Grab environment we need

@@ -1,9 +1,9 @@
 ---------------------------------------------------------------------------
---- Magnifier layout module for awful
+--- Magnifier layout module for awful.
 --
 -- @author Julien Danjou &lt;julien@danjou.info&gt;
 -- @copyright 2008 Julien Danjou
--- @module awful.layout
+-- @clientlayoutmod awful.layout.suit.magnifier
 ---------------------------------------------------------------------------
 
 -- Grab environment we need

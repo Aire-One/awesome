@@ -1,9 +1,9 @@
 ---------------------------------------------------------------------------
---- Maximized and fullscreen layouts module for awful
+--- Maximized and fullscreen layouts module for awful.
 --
 -- @author Julien Danjou &lt;julien@danjou.info&gt;
 -- @copyright 2008 Julien Danjou
--- @module awful.layout
+-- @clientlayoutmod awful.layout.suit.max
 ---------------------------------------------------------------------------
 
 -- Grab environment we need
