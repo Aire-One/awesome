@@ -19,6 +19,8 @@ function awful.spawn(args)
     assert(#c:tags() == 1)
     assert(c:tags()[1] == args.tag)
 
+    assert(c.screen == args.screen or screen[1])
+
     return c
 end
 
