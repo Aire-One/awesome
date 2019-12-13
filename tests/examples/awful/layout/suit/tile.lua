@@ -9,7 +9,7 @@ local awful = {
     tag_layout = require 'awful.layout.suit.tile'
 }
 
-function awful.spawn(_, args)
+function awful.spawn(args)
     local c = client.gen_fake{}
     c:tags { args.tag }
 
@@ -36,7 +36,10 @@ awful.tag.add('1', {
 -- Spawn clients on the tag.
 local clients = {}
 for i=1,3 do
-    clients['client #' .. i] = awful.spawn(nil, { tag = '1' })
+    table.insert(clients, {
+        label = 'client #' .. i,
+        client = awful.spawn { tag = '1' }
+    })
 end
 
 return {
