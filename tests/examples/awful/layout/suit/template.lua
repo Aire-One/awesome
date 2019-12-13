@@ -100,9 +100,9 @@ for k=1, screen.count() do
 
     -- Draw clients.
     if args.draw_clients then
-        for label,client in pairs(args.draw_clients) do
-            if client.screen == s then
-                draw_struct(s, client, 'tiling_client', offset, label)
+        for _,c in ipairs(args.draw_clients) do
+            if c.client.screen == s then
+                draw_struct(s, c.client, 'tiling_client', offset, c.label)
             end
         end
     end
