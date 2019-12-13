@@ -1,6 +1,8 @@
 ---------------------------------------------------------------------------
 --- Tiled layouts module for awful.
 --
+-- @DOC_awful_layout_suit_tile_EXAMPLE@
+--
 -- @author Donald Ephraim Curtis &lt;dcurtis@cs.uiowa.edu&gt;
 -- @author Julien Danjou &lt;julien@danjou.info&gt;
 -- @copyright 2009 Donald Ephraim Curtis
@@ -310,6 +312,9 @@ function tile.skip_gap(nclients, t)
 end
 
 --- The main tile algo, on the right.
+--
+-- @DOC_awful_layout_suit_tile_right_add_clients_EXAMPLE@
+--
 -- @param screen The screen number to tile.
 -- @clientlayout awful.layout.suit.tile.right
 tile.right = {}
