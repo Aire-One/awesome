@@ -93,6 +93,8 @@ new_type("rulecomponent", "Rule components", false, "Type")
 new_type("filterfunction", "List filters", false)
 -- Extra client properties available only in awful.rules/spawn constructs
 new_type("clientruleproperty", "Extra properties available in awful.rules and awful.spawn", false, "Type")
+--
+new_type("clientlayoutproperty", "Tag properties to configure client layout", false, "Type")
 
 -- Simulate the default "params" parser format, except the optional "[]" section
 -- needs a space.
