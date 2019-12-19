@@ -44,6 +44,35 @@ local tile = {}
 -- @param surface
 -- @see gears.surface
 
+--- The master_count property.
+--
+-- A useful description.
+-- @DOC_awful_layout_suit_tile_master_count_EXAMPLE@
+-- @clientlayoutproperty master_count
+-- @tparam number master_count
+
+--- The column_count property.
+--
+-- A useful description.
+-- @DOC_awful_layout_suit_tile_master_count_EXAMPLE@
+-- @clientlayoutproperty column_count
+-- @tparam number column_count
+
+--- The master_fill_policy property.
+--
+-- A useful description.
+-- @DOC_awful_layout_suit_tile_master_count_EXAMPLE@
+-- @clientlayoutproperty master_fill_policy
+-- @tparam string master_fill_policy
+
+--- The master_width_factor property.
+--
+-- A useful description.
+-- @DOC_awful_layout_suit_tile_master_count_EXAMPLE@
+-- @clientlayoutproperty master_width_factor
+-- @tparam string master_width_factor
+
+
 --- Jump mouse cursor to the client's corner when resizing it.
 -- @field awful.layout.suit.tile.resize_jump_to_corner
 tile.resize_jump_to_corner = true
@@ -313,8 +342,7 @@ end
 
 --- The main tile algo, on the right.
 --
--- @DOC_awful_layout_suit_tile_right_add_clients_EXAMPLE@
---
+-- @DOC_awful_layout_suit_tile_right_EXAMPLE@
 -- @param screen The screen number to tile.
 -- @clientlayout awful.layout.suit.tile.right
 tile.right = {}
@@ -326,6 +354,8 @@ function tile.right.mouse_resize_handler(c, corner, x, y)
 end
 
 --- The main tile algo, on the left.
+--
+-- @DOC_awful_layout_suit_tile_left_EXAMPLE@
 -- @param screen The screen number to tile.
 -- @clientlayout awful.layout.suit.tile.left
 tile.left = {}
@@ -339,6 +369,8 @@ function tile.left.mouse_resize_handler(c, corner, x, y)
 end
 
 --- The main tile algo, on the bottom.
+--
+-- @DOC_awful_layout_suit_tile_bottom_EXAMPLE@
 -- @param screen The screen number to tile.
 -- @clientlayout awful.layout.suit.tile.bottom
 tile.bottom = {}
@@ -352,6 +384,8 @@ function tile.bottom.mouse_resize_handler(c, corner, x, y)
 end
 
 --- The main tile algo, on the top.
+--
+-- @DOC_awful_layout_suit_tile_top_EXAMPLE@
 -- @param screen The screen number to tile.
 -- @clientlayout awful.layout.suit.tile.top
 tile.top = {}
