@@ -190,9 +190,7 @@
 #include "ewmh.h"
 #include "luaa.h"
 
-/**
- * @signal request::select
- */
+lua_class_t tag_class;
 
 /** When a client gets tagged with this tag.
  * @signal tagged
