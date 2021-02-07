@@ -13,6 +13,8 @@
 -- `wibox.widget.textbox` associated with a private `gears.timer` to manage
 -- timed updates of the displayed clock.
 --
+-- @DOC_inheritance_diagram_wibox_widget_textclock_EXAMPLE@
+--
 -- Use a `wibox.widget.textclock`
 -- ---
 --
