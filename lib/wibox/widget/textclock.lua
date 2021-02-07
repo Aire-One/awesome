@@ -164,6 +164,8 @@ function textclock.mt:__call(...)
     return new(...)
 end
 
+--@DOC_wibox_widget_textbox_COMMON@
+
 --@DOC_widget_COMMON@
 
 --@DOC_object_COMMON@
