@@ -482,3 +482,26 @@ pre .url { color: #272fc2; text-decoration: underline; }
     color: rgb(128, 128, 128);
     border-radius: 7px;
 }
+
+/* Inheritance diagram */
+.inheritance ul {
+    list-style: none;
+}
+
+.inheritance .li::before {
+    content: none;
+}
+
+.inheritance li.inheritance-rootclass::before {
+    content: "";
+    margin-right: 15px;
+}
+
+.inheritance li.inheritance-nested::before {
+    content: "↳";
+    margin-right: 10px;
+}
+
+.inheritance ul.nested {
+    padding-left: 0;
+}
