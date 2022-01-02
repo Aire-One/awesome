@@ -645,3 +645,8 @@ pre .url { color: #272fc2; text-decoration: underline; }
     color: #00000044;
     margin-top: 15px;
 }
+
+.img-object {
+    max-width: 100%;
+    padding: 5px;
+}
