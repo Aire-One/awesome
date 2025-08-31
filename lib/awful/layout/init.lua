@@ -264,6 +264,16 @@ function layout.arrange(screen)
                 g.height = math.max(1, g.height - c.border_width * 2 - useless_gap * 2)
                 g.x = g.x + useless_gap
                 g.y = g.y + useless_gap
+                
+                -- Check for coordinate overflow before calling geometry
+                if g.x < -32768 or g.x > 32767 or g.y < -32768 or g.y > 32767 then
+                    print(string.format("COORDINATE OVERFLOW DETECTED:"))
+                    print(string.format("  Layout: %s", layout.get(screen).name or "unknown"))
+                    print(string.format("  Client: %s", c.name or "unknown"))
+                    print(string.format("  Coordinates: x=%d, y=%d (valid range: [-32768, 32767])", g.x, g.y))
+                    print(string.format("  Screen workarea: x=%d, y=%d, w=%d, h=%d", p.workarea.x, p.workarea.y, p.workarea.width, p.workarea.height))
+                end
+                
                 print("Arranging", c.name, "to", g.x, g.y, g.width, g.height)
                 c:geometry(g)
             end

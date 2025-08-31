@@ -93,7 +93,10 @@ end
 local function next_layout()
     awful.layout.inc(1)
 
-    assert(client.focus:tags()[1].layout ~= first_layout)
+    local current_layout = client.focus:tags()[1].layout
+    print(string.format("DEBUG: Switching to layout: %s", current_layout.name or "unknown"))
+
+    assert(current_layout ~= first_layout)
 
     return true
 end
@@ -103,68 +106,82 @@ local common_steps = {
     function()
         assert(#t:clients() == 5)
 
+        print(string.format("DEBUG: Setting master_count = 2 for layout %s", t.layout.name or "unknown"))
         t.master_count = 2
 
         return true
     end,
     function()
+        print(string.format("DEBUG: Setting master_count = 0 for layout %s", t.layout.name or "unknown"))
         t.master_count = 0
 
         return true
     end,
     function()
+        print(string.format("DEBUG: Setting master_count = 6 for layout %s", t.layout.name or "unknown"))
         t.master_count = 6 --more than #client.get(1)
 
         return true
     end,
     function()
+        print(string.format("DEBUG: Setting master_count = 1 for layout %s", t.layout.name or "unknown"))
         t.master_count = 1
 
         return true
     end,
     function()
+        print(string.format("DEBUG: Setting column_count = 2 for layout %s", t.layout.name or "unknown"))
         t.column_count = 2
 
         return true
     end,
     function()
+        print(string.format("DEBUG: Setting column_count = 6 for layout %s", t.layout.name or "unknown"))
         t.column_count = 6 --more than #client.get(1)
 
         return true
     end,
     function()
+        print(string.format("DEBUG: Setting column_count = 1 for layout %s", t.layout.name or "unknown"))
         t.column_count = 1
 
         return true
     end,
     function()
-        t.master_fill_policy = t.master_fill_policy == "master_width_factor" and
-        "expand" or "master_width_factor"
+        local new_policy = t.master_fill_policy == "master_width_factor" and "expand" or "master_width_factor"
+        print(string.format("DEBUG: Setting master_fill_policy = %s for layout %s", new_policy, t.layout.name or "unknown"))
+        t.master_fill_policy = new_policy
 
         return true
     end,
     function()
+        print(string.format("DEBUG: Setting master_width_factor = 0.75 for layout %s", t.layout.name or "unknown"))
         t.master_width_factor = 0.75
 
         return true
     end,
     function()
+        print(string.format("DEBUG: Setting master_width_factor = 0 for layout %s", t.layout.name or "unknown"))
         t.master_width_factor = 0
 
         return true
     end,
     function()
+        print(string.format("DEBUG: Setting master_width_factor = 1 for layout %s", t.layout.name or "unknown"))
         t.master_width_factor = 1
 
         return true
     end,
     function()
+        print(string.format("DEBUG: Setting master_width_factor = 0.5 for layout %s", t.layout.name or "unknown"))
         t.master_width_factor = 0.5
 
         return true
     end,
     function()
-        t.gap = t.gap == 0 and 5 or 0
+        local new_gap = t.gap == 0 and 5 or 0
+        print(string.format("DEBUG: Setting gap = %d for layout %s", new_gap, t.layout.name or "unknown"))
+        t.gap = new_gap
 
         return true
     end,
