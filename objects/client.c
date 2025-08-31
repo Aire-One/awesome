@@ -3698,6 +3698,10 @@ luaA_client_geometry(lua_State *L)
         area_t geometry;
 
         luaA_checktable(L, 2);
+
+        printf("Resizing client %p\n", c);
+        printf("  Old geometry: %dx%d%+d%+d (%d)\n", c->geometry.width, c->geometry.height, c->geometry.x, c->geometry.y, client_isfixed(c));
+
         geometry.x = round(luaA_getopt_number_range(L, 2, "x", c->geometry.x, MIN_X11_COORDINATE, MAX_X11_COORDINATE));
         geometry.y = round(luaA_getopt_number_range(L, 2, "y", c->geometry.y, MIN_X11_COORDINATE, MAX_X11_COORDINATE));
         if(client_isfixed(c))
@@ -3710,6 +3714,8 @@ luaA_client_geometry(lua_State *L)
             geometry.width = ceil(luaA_getopt_number_range(L, 2, "width", c->geometry.width, MIN_X11_SIZE, MAX_X11_SIZE));
             geometry.height = ceil(luaA_getopt_number_range(L, 2, "height", c->geometry.height, MIN_X11_SIZE, MAX_X11_SIZE));
         }
+
+        printf("  New geometry: %dx%d%+d%+d\n", geometry.width, geometry.height, geometry.x, geometry.y);
 
         client_resize(c, geometry, c->size_hints_honor);
     }
