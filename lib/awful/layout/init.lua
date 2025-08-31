@@ -264,6 +264,7 @@ function layout.arrange(screen)
                 g.height = math.max(1, g.height - c.border_width * 2 - useless_gap * 2)
                 g.x = g.x + useless_gap
                 g.y = g.y + useless_gap
+                print("Arranging", c.name, "to", g.x, g.y, g.width, g.height)
                 c:geometry(g)
             end
         end)
