@@ -274,7 +274,6 @@ function layout.arrange(screen)
                     print(string.format("  Screen workarea: x=%d, y=%d, w=%d, h=%d", p.workarea.x, p.workarea.y, p.workarea.width, p.workarea.height))
                 end
                 
-                print("Arranging", c.name, "to", g.x, g.y, g.width, g.height)
                 c:geometry(g)
             end
         end)
