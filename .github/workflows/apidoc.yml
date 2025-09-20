@@ -58,6 +58,7 @@ jobs:
             git \
             imagemagick \
             libdbus-1-dev \
+            libgdk-pixbuf-2.0-dev \
             libgirepository1.0-dev \
             libnotify-bin \
             libpango1.0-dev \
