@@ -62,6 +62,7 @@ jobs:
             libgirepository1.0-dev \
             libnotify-bin \
             libpango1.0-dev \
+            librsvg2-dev \
             libstartup-notification0-dev \
             libx11-xcb-dev \
             libxcb-cursor-dev \
