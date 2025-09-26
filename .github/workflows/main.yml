@@ -57,7 +57,7 @@ jobs:
             lua_version: "5.1"
             lua_name: "luajit"
             lua_library: "/usr/lib/x86_64-linux-gnu/libluajit-5.1.so"
-            lua_include: "/usr/include/luajit-2.1"
+            # lua_include: "/usr/include/luajit-2.1"
             luarocks_args: "--lua-suffix=jit-2.1.0-beta3"
 
           # Lua 5.2 with fixed lgi version and screen size not divisible by 2.
