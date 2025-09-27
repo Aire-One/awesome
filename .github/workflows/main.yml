@@ -58,7 +58,6 @@ jobs:
             lua_name: "luajit"
             lua_library: "/home/runner/work/awesome/awesome/.lua/lib/libluajit-5.1.so"
             lua_include: "/home/runner/work/awesome/awesome/.lua/include/luajit-2.0"
-            lua_executable: "/home/runner/work/awesome/awesome/.lua/bin/luajit"
             # luarocks_args: "--lua-suffix=jit-2.1.0-beta3"
 
           # Lua 5.2 with fixed lgi version and screen size not divisible by 2.
@@ -75,7 +74,6 @@ jobs:
       LUA: ${{ matrix.lua_version }}
       LUAINCLUDE: ${{ matrix.lua_include || format('/usr/include/lua{0}', matrix.lua_version) }}
       LUALIBRARY: ${{ matrix.lua_library || format('/usr/lib/x86_64-linux-gnu/liblua{0}.so', matrix.lua_version) }}
-      LUAEXECUTABLE: ${{ matrix.lua_executable || format('lua{0}', matrix.lua_version) }}
       TESTS_SCREEN_SIZE: ${{ matrix.tests_screen_size }}
       TEST_TIMEOUT: "100"
       CI: "true"
@@ -281,7 +279,6 @@ jobs:
         run: |
           cmake -S ${{ github.workspace }} -B "${{ github.workspace}}/build" \
             -DAWESOME_VERSION=$AWESOME_VERSION \
-            -DLUA_EXECUTABLE=$LUAEXECUTABLE \
             -DLUA_LIBRARY=$LUALIBRARY \
             -DLUA_INCLUDE_DIR=$LUAINCLUDE \
             -DGENERATE_DOC=OFF \
