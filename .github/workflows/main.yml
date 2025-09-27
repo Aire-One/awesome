@@ -56,8 +56,8 @@ jobs:
           - test_name: "luajit"
             lua_version: "5.1"
             lua_name: "luajit"
-            lua_library: "${{ github.workspace }}/.lua/lib/libluajit-5.1.so"
-            lua_include: "${{ github.workspace }}/.lua/include/luajit-2.0"
+            lua_library: "/home/runner/work/awesome/awesome/.lua/lib/libluajit-5.1.so"
+            lua_include: "/home/runner/work/awesome/awesome/.lua/include/luajit-2.0"
             # luarocks_args: "--lua-suffix=jit-2.1.0-beta3"
 
           # Lua 5.2 with fixed lgi version and screen size not divisible by 2.
