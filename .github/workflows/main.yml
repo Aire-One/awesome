@@ -162,12 +162,11 @@ jobs:
       - name: debug
         run: |
           sudo apt-get install tree
+          pwd
           tree .lua
-          tree /home/runner/work/awesome/awesome/.lua
-          tree
-          ls $LUALIBRARY
-          ls $LUAINCLUDE
-          ls $PATH
+          stat $LUALIBRARY
+          stat $LUAINCLUDE
+          echo $PATH
 
       # Ubuntu 20.04 hasn't a package for Lua 5.4, we need to build it from source.
       - name: Build and Install Lua 5.4
