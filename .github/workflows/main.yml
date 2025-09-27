@@ -286,7 +286,7 @@ jobs:
 
       - name: Configure CMake
         run: |
-          cmake -S ${{ github.workspace }} -B "${{ github.workspace}}/build" \
+          cmake -S ${{ github.workspace }} -B "${{ github.workspace}}/build" --verbose \
             -DAWESOME_VERSION=$AWESOME_VERSION \
             -DLUA_LIBRARY=$LUALIBRARY \
             -DLUA_INCLUDE_DIR=$LUAINCLUDE \
