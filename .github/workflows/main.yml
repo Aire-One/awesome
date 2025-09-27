@@ -56,7 +56,7 @@ jobs:
           - test_name: "luajit"
             lua_version: "5.1"
             lua_name: "luajit"
-            lua_library: "/home/runner/work/awesome/awesome/.lua/lib/libluajit-5.1.a"
+            lua_library: "/home/runner/work/awesome/awesome/.lua/lib/libluajit-5.1.so"
             lua_include: "/home/runner/work/awesome/awesome/.lua/include/luajit-2.0"
             # luarocks_args: "--lua-suffix=jit-2.1.0-beta3"
 
