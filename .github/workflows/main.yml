@@ -296,7 +296,11 @@ jobs:
           grep -q 'May not access' lib/beautiful/init.lua
 
       - name: Build
-        run: cd "${{ github.workspace }}/build" && make -j3
+        run: |
+          ls $LUALIBRARY
+          ls $LUAINCLUDE
+          ls $PATH
+          cd "${{ github.workspace }}/build" && make -j3
 
       # Executable needs to be run once to provide coverage results
       - name: Install and run
