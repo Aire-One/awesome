@@ -41,7 +41,7 @@ jobs:
           - test_name: "codecov-lua5.3"
             lua_version: "5.3"
             lua_name: "lua5.3"
-            coverage: "codecov"
+            # coverage: "codecov"
             manual_screens: true
 
           - test_name: "lua5.2"
