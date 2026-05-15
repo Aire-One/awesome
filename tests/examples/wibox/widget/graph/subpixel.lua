@@ -13,10 +13,6 @@ local l = wibox.layout { --DOC_HIDE
     layout        = wibox.layout.flex.vertical --DOC_HIDE
 } --DOC_HIDE
 
-for _, small_step in ipairs {1, 1/2, 1/3} do
-    _ = small_step --DOC_HIDE silence luacheck unused var warning
-end --DOC_HIDE actually use truncated numbers, hopefully helps with reproducibility
-
 for _, small_step in ipairs {1, 0.5, 21845/65536} do --DOC_HIDE
     local w = --DOC_HIDE
     wibox.widget {
