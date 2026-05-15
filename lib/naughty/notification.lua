@@ -889,7 +889,8 @@ local function convert_actions(actions)
     local new_actions = {}
 
     -- Does not attempt to handle when there is a mix of strings and objects
-    for idx, name in pairs(actions) do
+    for action_idx, action_name in pairs(actions) do
+        local idx, name = action_idx, action_name
         local cb, old_idx = nil, idx
 
         if type(name) == "function" then

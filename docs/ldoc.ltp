@@ -613,9 +613,9 @@
   <p>$(M(ldoc.full_description,nil))</p>
 # end
 
-# for kind, mods in ldoc.kinds() do
-<h2>$(kind)</h2>
-# kind = kind:lower()
+# for k, mods in ldoc.kinds() do
+<h2>$(k)</h2>
+# kind = k:lower()
 <table class="module_list">
 # for m in mods() do
   <tr>
