@@ -24,6 +24,11 @@ if(NOT EXISTS ${SOURCE_DIR}/awesomeConfig.cmake)
     message(FATAL_ERROR "Please provide awesomeConfig.cmake")
 endif()
 
+# Add vendored CMake modules to the search path.
+# This is necessary to use an updated version of FindLua.cmake, which is
+# required to find Lua 5.5.
+list(PREPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+
 # Define many variables
 
 include(awesomeConfig.cmake)
