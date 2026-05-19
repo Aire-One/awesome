@@ -3,6 +3,7 @@ pull_request_rules:
     conditions:
       - label!=no-mergify
       - '#approved-reviews-by>=2'
+      - check-success=lua5.5
       - check-success=lua5.4
       - check-success=codecov-lua5.3
       - check-success=lua5.2
