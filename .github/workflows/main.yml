@@ -31,6 +31,10 @@ jobs:
       fail-fast: false
       matrix:
         include:
+          - test_name: "lua5.5"
+            lua_version: "5.5"
+            lua_name: "lua5.5"
+
           - test_name: "lua5.4"
             lua_version: "5.4"
             lua_name: "lua5.4"
@@ -190,21 +194,25 @@ jobs:
 
       # Only LGI git master supports Lua 5.4. We need to build it from source.
       - name: Build and Install LGI
-        if: matrix.lua_version == '5.4'
+        if: matrix.lua_version == '5.4' || matrix.lua_version == '5.5'
         run: |
           wget -O /tmp/lgi.zip https://github.com/pavouk/lgi/archive/refs/heads/master.zip
           unzip /tmp/lgi.zip -d /tmp
           cd /tmp/lgi-master
-          sed -i 's/5.1/5.4/' lgi/Makefile
+          sed -i 's/5.1/${{ matrix.lua_version }}/' lgi/Makefile
           make all CFLAGS="-I$LUAINCLUDE"
           sudo make install
 
       - name: Install rocks
         run: |
-          if [ "${{ matrix.lua_name }}" != "lua5.4" ]; then
+          if [[ "${{ matrix.lua_name }}" != "lua5.4" && "${{ matrix.lua_name }}" != "lua5.5" ]]; then
             luarocks install lgi ${{ matrix.lgi_version }}
           fi
-          luarocks install ldoc
+          if [ "${{ matrix.lua_name }}" == "lua5.5" ]; then
+            luarocks install https://raw.githubusercontent.com/lunarmodules/ldoc/refs/heads/master/ldoc-dev-1.rockspec
+          else
+            luarocks install ldoc
+          fi
           luarocks install busted
 
       - name: Install QA check rocks
