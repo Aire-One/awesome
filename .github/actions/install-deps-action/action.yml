@@ -77,7 +77,6 @@ runs:
             xutils-dev \
             xvfb \
             zsh \
-            lua-discount \
             fonts-noto-core \
             fonts-dejavu-core \
             fonts-roboto-unhinted \
@@ -141,9 +140,8 @@ runs:
           cd /tmp/xcb-errors
           sudo make install
 
-      # Only LGI git master supports Lua > 5.3. We need to build it from source.
+      # Only LGI doesn't work without fixes that are only available in the git master version.
       - name: Build and Install LGI
-        if: steps.detect-lua-version.outputs.version == '5.4' || steps.detect-lua-version.outputs.version == '5.5'
         shell: /bin/bash -o errexit -o pipefail -o xtrace {0}
         run: |
           wget -O /tmp/lgi.zip https://github.com/pavouk/lgi/archive/refs/heads/master.zip
@@ -156,10 +154,6 @@ runs:
       - name: Install rocks
         shell: /bin/bash -o errexit -o pipefail -o xtrace {0}
         run: |
-          if [[ "${{ steps.detect-lua-version.outputs.version }}" != "5.4" && "${{ steps.detect-lua-version.outputs.version }}" != "5.5" ]]; then
-            luarocks install lgi ${{ inputs.lgi-version }}
-          fi
-
           # Ldoc is not yet released for Lua 5.5, install from the development rockspec
           if [ "${{ steps.detect-lua-version.outputs.version }}" == "5.5" ]; then
             luarocks install https://raw.githubusercontent.com/lunarmodules/ldoc/refs/heads/master/ldoc-dev-1.rockspec
