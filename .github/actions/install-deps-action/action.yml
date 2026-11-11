@@ -77,7 +77,6 @@ runs:
             xutils-dev \
             xvfb \
             zsh \
-            lua-discount \
             fonts-noto-core \
             fonts-dejavu-core \
             fonts-roboto-unhinted \
