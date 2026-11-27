@@ -143,12 +143,18 @@ runs:
       # Only LGI doesn't work without fixes that are only available in the git master version.
       - name: Build and Install LGI
         shell: /bin/bash -o errexit -o pipefail -o xtrace {0}
+        env:
+          LUA_VERSION: ${{ inputs.lua-version }}
         run: |
           wget -O /tmp/lgi.zip https://github.com/pavouk/lgi/archive/refs/heads/master.zip
           unzip /tmp/lgi.zip -d /tmp
           cd /tmp/lgi-master
           sed -i 's/5.1/${{ steps.detect-lua-version.outputs.version }}/' lgi/Makefile
-          make all CFLAGS="-I${{ github.workspace }}/.lua/include"
+          lua_include="$GITHUB_WORKSPACE/.lua/include"
+          if [[ "$LUA_VERSION" == luajit* ]]; then
+            lua_include="$lua_include/luajit-2.0"
+          fi
+          make all CFLAGS="-I$lua_include"
           sudo make install
       
       - name: Install rocks
